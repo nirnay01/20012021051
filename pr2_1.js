@@ -10,7 +10,7 @@ r1.question('what is your name:',(name)=>{
         else{
             r1.question('what is your email ID:',(email)=>{
                 r1.question('what is your mobile No:',(mo)=>{
-                    console.log("Great "+name+" you can sign in.")
+                    console.log("Great "+name+" you can sign in")
                     console.log("your name:"+name+"\nyour age:"+age+"\nyour email:"+email+"\nyour mobile no:"+mo);
                     r1.close();
                 });
