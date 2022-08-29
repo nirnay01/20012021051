@@ -1,0 +1,12 @@
+exports.f1=function(a,b){
+return(a+b)
+}
+exports.f2=function(a,b){
+return(a-b)
+}
+exports.f3=function(a,b){
+return(a*b)
+}
+exports.f4=function(a,b){
+return(a/b)
+}
