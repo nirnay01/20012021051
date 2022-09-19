@@ -1,0 +1,1 @@
+console.log(require('path').parse("H:\BACKUP\node\myexamples\CIRCLE.js"))
