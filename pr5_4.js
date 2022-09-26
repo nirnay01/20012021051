@@ -6,3 +6,6 @@
 // e. Find out the name of active listeners for the specified event.
 // f. Find out the number of listeners listening to the specified event.
 // g. How to change the execution position of listeners
+const event = require('events');
+const e = new event.EventEmitter();
+e.addListener()
