@@ -1,3 +1,5 @@
+// Create an event emitter instance and register a listener which calculates current date and time and display greeting based on time.
+
 const event = require('events');
 const e = new event.EventEmitter();
 e.on('clicked',function(){

@@ -1,3 +1,5 @@
+// Create an event and register two listeners to perform sum of two values with different arguments (use different data types).
+
 const event = require('events');
 const e = new event.EventEmitter();
 e.once('event-1',(num1,num2)=>{
