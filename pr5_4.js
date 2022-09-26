@@ -8,4 +8,23 @@
 // g. How to change the execution position of listeners
 const event = require('events');
 const e = new event.EventEmitter();
-e.addListener()
+
+e.on('event',(err,data)=>{
+        if(err)
+        {
+            console.log(err.message);
+        }
+        else{
+            console.log("Event is added");
+        }
+});
+e.removeListener('event',(err,data)=>{
+    if(err)
+    {
+        console.log(err.message);
+    }
+    else{
+        console.log("Event is remove");
+    }});
+e.emit('event');
+e.removeAllListeners()
