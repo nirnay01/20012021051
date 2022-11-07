@@ -1,12 +1,42 @@
+var express = require("express");
+var app     = express();
+var path    = require("path");
 var mysql = require('mysql');
-var express=require('express')
-var app=express()
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
   database: "node_test"
 });
-// var sql = "INSERT INTO prodct(id,name,brand,quantity,price) VALUES ()";
-var a='<html><body><form ><table border="1"><tr><td>id</td><td><input type="number" name="id" placeholder="enter product id"></td></tr><tr><td>name</td><td><input type="text" name="name" id="name" placeholder="enter product name"></td></tr><tr><td>brand</td><td><input type="text" name="brand" id="brand" placeholder="enter product brand"></td></tr><tr><td>quantity</td><td><input type="number" name="quantity" id="quantity" placeholder="enter the quantity"></td></tr><tr><td>price</td><td><input type="number" name="price" id="price" placeholder="enter price of product"></td></tr></table></form></body></html>'
-app.use("/",a)
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname+'/pr6_3.html'));
+});
+app.post('/submit',function(req,res){
+
+  var id=req.body.id;
+  var name=req.body.name;
+  var brand=req.body.brand;
+  var quantity=req.body.quantity;
+  var price=req.body.price;
+
+  res.write('You sent the id "' + req.body.id+'".\n');
+  res.write('You sent the name "' + req.body.name+'".\n');
+  res.write('You sent the brand "' + req.body.brand+'".\n');
+  res.write('You sent the quantity "' + req.body.quantity+'".\n');
+  res.write('You sent the price "' + req.body.price+'".\n');
+
+  con.connect(function(err) {
+  if (err) throw err;
+  var sql = "INSERT INTO product(id,name,brand,quantity,price) VALUES ('"+id+"', '"+name+"','"+brand+"','"+quantity+"','"+price+"')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+     res.end();
+  });
+  });
+})
+app.listen(3000);
+console.log("Running at Port:http://127.0.0.1:3000/");
