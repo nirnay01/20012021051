@@ -13,7 +13,7 @@ if(err) throw err
     console.log("connected")
 })
 app.get('/',function(req,res){
-    con.query("select * from product where name='Nirnay Raval' or brand='abc'",function(err,result){
+    con.query("select * from product where name='soap' or brand='dettol'",function(err,result){
         if(err) throw err
         res.send(result)
     })
