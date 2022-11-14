@@ -25,7 +25,7 @@ e.removeAllListeners()
 e.emit('event');
 // c. How to get the maximum size of listener that will bind with a specific event
 // d. How to change the maximum size of listeners to bind with specific events
-e.setMaxListeners(5);
+e.setMaxListeners(15);
 e.emit('event');
 for(i=0;i<5;i++)
 {
@@ -40,12 +40,13 @@ e.on('event',(err,data)=>{
 }
 );
 }
-// e. Find out the name of active listeners for the specified event.
+// // e. Find out the name of active listeners for the specified event.
 e.emit('event');
-e.eventNames();
+console.log(e.eventNames());
+
 // f. Find out the number of listeners listening to the specified event.
 e.emit('event');
-e.listenerCount('event');
+console.log(e.listenerCount('event'));
 // g. How to change the execution position of listeners
 e.emit('event');
 e.prependListener('event',(err,data)=>{
