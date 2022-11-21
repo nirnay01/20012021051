@@ -5,6 +5,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())
 var products = [
     { id: 1, name: 'Laptop', size: '15.6', brand: 'Dell', color: 'Black' },
     { id: 2, name: 'Mobile', size: '5.5', brand: 'Samsung', color: 'White' },

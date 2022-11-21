@@ -17,19 +17,12 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var order = [
-    { id: 1, name: 'Laptop', size: '15.6', brand: 'Dell', color: 'Black' },
-    { id: 2, name: 'Mobile', size: '5.5', brand: 'Samsung', color: 'White' },
-    { id: 3, name: 'Tablet', size: '10.1', brand: 'Apple', color: 'Silver' },
-    { id: 4, name: 'Watch', size: '1.5', brand: 'Fossil', color: 'Black' },
-    { id: 5, name: 'Camera', size: '2.5', brand: 'Canon', color: 'Black' }
+    { id: 1, name: 'Laptop', size: '15.6', brand: 'Dell', color: 'Black' }
 ];
 
 var user = [
     { id: 1, name: 'Laptop', size: '15.6', brand: 'Dell', color: 'Black' },
-    { id: 2, name: 'Mobile', size: '5.5', brand: 'Samsung', color: 'White' },
-    { id: 3, name: 'Tablet', size: '10.1', brand: 'Apple', color: 'Silver' },
-    { id: 4, name: 'Watch', size: '1.5', brand: 'Fossil', color: 'Black' },
-    { id: 5, name: 'Camera', size: '2.5', brand: 'Canon', color: 'Black' }
+    { id: 2, name: 'Mobile', size: '5.5', brand: 'Samsung', color: 'White' }
 ];
 
 var product = [
@@ -44,8 +37,7 @@ var category = [
     { id: 1, name: 'Laptop', size: '15.6', brand: 'Dell', color: 'Black' },
     { id: 2, name: 'Mobile', size: '5.5', brand: 'Samsung', color: 'White' },
     { id: 3, name: 'Tablet', size: '10.1', brand: 'Apple', color: 'Silver' },
-    { id: 4, name: 'Watch', size: '1.5', brand: 'Fossil', color: 'Black' },
-    { id: 5, name: 'Camera', size: '2.5', brand: 'Canon', color: 'Black' }
+    { id: 4, name: 'Watch', size: '1.5', brand: 'Fossil', color: 'Black' }
 ];
 
 app.get('/order', function (req, res) {
